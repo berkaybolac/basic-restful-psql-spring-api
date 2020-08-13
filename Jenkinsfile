@@ -1,6 +1,7 @@
 #!groovy
 
 pipeline {
+    
 
     agent {
         docker {
@@ -16,6 +17,10 @@ pipeline {
                 sh "mvn -version"
                 sh "mvn clean install"
             }
+        }
+        stage('Push image') {
+        withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
+        bat "docker push devopsglobalmedia/teamcitydocker:build"
         }
     }
 
