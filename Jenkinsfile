@@ -2,6 +2,7 @@
 
 pipeline {
 
+
     agent {
         docker {
             image "maven:3.6.0-jdk-11"
@@ -17,6 +18,7 @@ pipeline {
                 sh "mvn clean install"
             }
         }
+        
     }
 
     post {
