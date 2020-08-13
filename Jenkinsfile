@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker {
             image "maven:3.6.0-jdk-11"
-            args '--name docker-node'
+            label "docker"
 
         }
     }
