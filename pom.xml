@@ -57,6 +57,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>basic-restful-psql-spring-api</finalName>
 	</build>
 
 </project>
