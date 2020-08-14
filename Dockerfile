@@ -1,5 +1,7 @@
 FROM maven:3.6.0-jdk-11
 
-RUN useradd -m -u 1000 -s /bin/bash jenkins
+EXPOSE 8080
 
-RUN yum install -y openssh-clients
+ADD target/basic-restful-psql-spring-api.jar basic-restful-psql-spring-api.jar
+
+ENTRYPOINT ["java","-jar", "basic-restful-psql-spring-api.jar"]
